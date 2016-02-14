@@ -31,10 +31,7 @@ var Module = angular.module('datePicker', []);
 //Moment format filter.
   Module.filter('mFormat', function () {
     return function (m, format, tz) {
-      if (!(moment.isMoment(m))) {
-        return moment(m).format(format);
-      }
-      return tz ? moment.tz(m, tz).format(format) : m.format(format);
+      return tz ? moment.tz(m, tz).format(format) : moment(m).format(format);
     };
   });
 
